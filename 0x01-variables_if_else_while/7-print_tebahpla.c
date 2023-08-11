@@ -1,17 +1,15 @@
 /* Head section */
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
- * main -
+ * main - Write a program that prints the lowercase alphabet in reversee
  * Return: 0
  */
 int main(void)
 {
-	/* main body of code */
+/* Write a program that prints the lowercase alphabet in reverse */
 	char alp = 122;
-	/* more headers goes ther */
-	/* betty style doc for function main goes there */
+
 	while (alp > 96)
 	{
 		putchar(alp);
