@@ -17,6 +17,7 @@
 int main(void)
 {
 	int ch_a = 0;
+
 	while (ch_a < 10)
 	{
 		printf("%d", ch_a);
