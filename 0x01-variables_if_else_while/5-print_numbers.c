@@ -16,9 +16,11 @@
 /* betty style doc for function main goes there */
 int main(void)
 {
-	for (int ch_a = 0; ch_a < 10; ch_a++)
+	int ch_a = 0;
+	while (ch_a < 10)
 	{
 		printf("%d", ch_a);
+		ch_a++;
 	}
 	printf("\n");
 	return (0);
