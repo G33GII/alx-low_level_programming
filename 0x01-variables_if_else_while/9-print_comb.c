@@ -28,6 +28,5 @@ int main(void)
 	}
 	putchar(48 + 9);
 	putchar('\n');
-
-return (0);
+	return (0);
 }
