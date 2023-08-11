@@ -21,7 +21,7 @@ int main(void)
 	for (ch_a = 97; ch_a < 123; ch_a++)
 	{
 		if (ch_a == 101 || ch_a == 113)
-				continue;
+			continue;
 		else
 			putchar(ch_a);
 	}
