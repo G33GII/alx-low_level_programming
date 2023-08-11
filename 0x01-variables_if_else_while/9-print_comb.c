@@ -17,7 +17,7 @@ int main(void)
 	int s_d = 0;
 	int lett;
 
-	while (s_d < 9)
+	while (s_d < 10)
 	{
 		putchar(48 + s_d);
 		lett = 44;
@@ -26,7 +26,6 @@ int main(void)
 		putchar(lett);
 		s_d++;
 	}
-	putchar(48 + 9);
 	putchar('\n');
 	return (0);
 }
