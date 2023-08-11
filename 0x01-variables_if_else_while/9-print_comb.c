@@ -14,7 +14,9 @@
 
 int main(void)
 {
-	for (int s_d = 0; s_d < 10; s_d++)
+	int s_d = 0;
+
+	while (s_d < 10)
 	{
 		putchar(48 + s_d);
 		if (s_d < 9)
@@ -22,6 +24,7 @@ int main(void)
 			putchar(',');
 			putchar(' ');
 		}
+	s_d++;
 	}
 	putchar('\n');
 	return (0);
