@@ -14,17 +14,14 @@
 
 int main(void)
 {
-	int s_d = 0;
-	int lett;
-
-	while (s_d < 10)
+	for (int s_d = 0; s_d < 10; s_d++)
 	{
 		putchar(48 + s_d);
-		lett = 44;
-		putchar(lett);
-		lett = ' ';
-		putchar(lett);
-		s_d++;
+		if (s_d < 9)
+		{
+			putchar(',');
+			putchar(' ');
+		}
 	}
 	putchar('\n');
 	return (0);
