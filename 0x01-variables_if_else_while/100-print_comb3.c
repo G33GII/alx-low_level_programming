@@ -8,24 +8,28 @@
  */
 int main(void)
 {
+	int fd = 0;
 
-	for (int s_d = 0; s_d < 10; s_d++)
+	while (fd < 10)
 	{
+		int sd = 0;
 
-		for (int f_d = 0; f_d < 10; f_d++)
+		while (sd < 10)
 		{
-			if (!((f_d == s_d) || (s_d > f_d)))
+			if ((fd != sd) && (fd < sd))
 			{
-				putchar('0' + s_d);
-				putchar('0' + f_d);
-				if (!(f_d == 9 && s_d == 8))
+				putchar(48 + fd);
+				putchar(48 + sd);
+				if (fd + sd != 17)
+				{
 					putchar(',');
 					putchar(' ');
+				}
 			}
-
+			sd++;
 		}
-
+		fd++;
 	}
-putchar('\n');
-return (0);
+	putchar('\n');
+	return (0);
 }
