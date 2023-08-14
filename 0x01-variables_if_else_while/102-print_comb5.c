@@ -1,44 +1,35 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
-/**
- * main - A program that prints all
- * possible combinations of two two-digit numbers
- * Return: 0 (Success)
+
+/***
+ * main - Should print numbers counting from 0000 - 9899
+ * Return: 0 Always
  */
+
 int main(void)
 {
-	int fd = 0;
-	int sd = 0;
+	int fd;
+	int sd;
 
-	while (fd < 99)
+	for(fd = 0; fd < 99; fd++)
 	{
-		while (sd < 100)
+		for (sd = fd + 1; sd < 100; sd++)
 		{
-			sd = fd + 1;
-			putchar(48 + fd / 10);
-			putchar(48 + fd % 10);
-			putchar(' ');
-			putchar(48 + sd / 10);
-			putchar(48 + sd % 10);
+			putchar ((fd / 10) + 48);
+			putchar ((fd % 10) + 48);
+			putchar (' ');
+			putchar ((sd / 10) + 48);
+			putchar ((sd % 10) + 48);
 
 			if (!(fd == 98 && sd == 99))
 			{
-				putchar(',');
-				putchar(' ');
-			}
-			else
+				putchar (',');
+				putchar (' ');
+			}else
 				continue;
 
 
-
-
 		}
-		sd++;
-
-	fd++;
 	}
-
-	putchar('\n');
+	putchar ('\n');
 	return (0);
 }
