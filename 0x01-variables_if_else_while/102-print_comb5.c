@@ -1,7 +1,8 @@
 #include <stdio.h>
 
-/***
+/**
  * main - Should print numbers counting from 0000 - 9899
+ *
  * Return: 0 Always
  */
 
@@ -10,7 +11,7 @@ int main(void)
 	int fd;
 	int sd;
 
-	for(fd = 0; fd < 99; fd++)
+	for (fd = 0; fd < 99; fd++)
 	{
 		for (sd = fd + 1; sd < 100; sd++)
 		{
@@ -24,7 +25,7 @@ int main(void)
 			{
 				putchar (',');
 				putchar (' ');
-			}else
+			} else
 				continue;
 
 
