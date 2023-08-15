@@ -1,10 +1,9 @@
 #include "main.h"
 /**
- * c: the input for the function
- * _islower: lowercase alphabets at detected
- * Return: 1 as sucessful and 0 as failed
+ * _islower - character checker
+ * @c: input char for checking
+ * Return: 1 sucess 0 fail
  */
-
 int _islower(int c)
 {
 	if (c > 96)
