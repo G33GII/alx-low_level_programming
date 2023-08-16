@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * jack_bauer - funtion defination that does the magic
+ * times_table - funtion defination that does the magic
  * void: input value to the functioin
  * Return: 1 or 0
  * -1 for negatives
