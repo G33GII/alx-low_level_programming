@@ -18,9 +18,6 @@ int print_last_digit(int gh)
 
 	gaza = gh % 10;
 
-	if (gaza < 0)
-		gaza = -gaza;
-
 	_putchar(gaza + '0');
 	return (gaza);
 }
