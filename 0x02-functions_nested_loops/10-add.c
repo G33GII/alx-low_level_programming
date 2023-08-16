@@ -2,16 +2,15 @@
 #include <stdio.h>
 /**
  * add - funtion defination that does the magic
- * gaza: input value to the functioin
- * sarah: input value
+ * @gaz: input value to the functioin
+ * @sara: input value
+ * gas: sum of inputs
  * Return: 1 or 0
- * -1 for negatives
- *  0 for equal to 0
- *
  */
 
-int add(int gaza, int sarah)
+int add(int gaz, int sara)
 {
-	int gasa = gaza + sarah;
-	return (gasa);
+	int gas = gaz + sara;
+
+	return (gas);
 }
