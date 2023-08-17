@@ -2,7 +2,8 @@
 /**
  * @a:  to our function argu
  * _isupper - name upper case char
- *
+ * _isupper - hhjfsjlkjlaks
+ * _isupper - hdkjajhldfj
  * Return: 0 or 1
  */
 int _isupper(char a)
