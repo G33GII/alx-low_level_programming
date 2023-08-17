@@ -1,13 +1,13 @@
 #include "main.h"
 /**
- * @ch: input to our function
+ * @a:  to our function argu
+ * _isupper - name upper case char
  *
- *
- *
- * */
-int _isupper(char ch)
+ * Return: 0 or 1
+ */
+int _isupper(char a)
 {
-	if (ch >= 65 && ch <= 90)
+	if (a >= 65 && a <= 90)
 		return (1);
 	else
 		return (0);
