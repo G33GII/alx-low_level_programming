@@ -18,14 +18,14 @@ void print_times_table(int g)
 
 				if (col == 0)
 				{
-					putchar(product + '0');
+					_putchar(product + '0');
 				} else if (product < 10 && col != 0)
 				{
 					_putchar(',');
 					_putchar(' ');
 					_putchar(' ');
 					_putchar(' ');
-					putchar(product + '0');
+					_putchar(product + '0');
 				} else if (product >= 10 && product < 100)
 				{
 					_putchar(',');
