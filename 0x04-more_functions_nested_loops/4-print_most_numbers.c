@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * print_most_numbers - funtion defination that does the magic
  * @void: no input value to the functioin only a std output
@@ -7,15 +8,14 @@
 
 void print_most_numbers(void)
 {
-	int g = 0;
+	char c = '0';
 
-	while (g < 10)
+	while ( c <= '9' )
 	{
-		if ((g == 2) || (g == 4))
-			continue;
-		else
-			_putchar (g + '0');
-		g++;
+		if (!(c == '2' || c == '4'))
+			_putchar(c);
+
+		c++;
 	}
-	_putchar ('\n');
+	_putchar('\n');
 }
