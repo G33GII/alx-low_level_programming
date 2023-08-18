@@ -16,11 +16,11 @@ int main(void)
 
 	for (ic = 1; ic <= 100; ic++)
 	{
-		if (ic % 3 == 0)
+		if (ic % 3 == 0 && ic % 5 != 0)
 		{
 			printf("Fizz ");
 		}
-		else if (ic % 5 == 0)
+		else if (ic % 5 == 0 && ic % 3 != 0)
 		{
 			printf("Buzz ");
 		}
