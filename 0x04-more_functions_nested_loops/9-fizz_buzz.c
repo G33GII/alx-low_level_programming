@@ -16,20 +16,24 @@ int main(void)
 
 	for (ic = 1; ic <= 100; ic++)
 	{
-		if (ic % 3 == 0 && ic % 5 != 0)
+		if (ic == 1)
 		{
-			printf("Fizz ");
+			printf("%d", ic);
+		}
+		else if (ic % 3 == 0 && ic % 5 != 0)
+		{
+			printf(" Fizz");
 		}
 		else if (ic % 5 == 0 && ic % 3 != 0)
 		{
-			printf("Buzz ");
+			printf(" Buzz");
 		}
 		else if (ic % 5 == 0 && ic % 3 == 0)
 		{
-			printf("FizzBuzz ");
+			printf(" FizzBuzz");
 		}
 		else
-			printf("%d ", ic);
+			printf(" %d", ic);
 	}
 
 	printf("\n");
