@@ -23,7 +23,6 @@ void print_diagonal(int n)
 			j++;
 		}
 		putchar ('\\');
-		putchar ('$');
 		putchar ('\n');
 		i++;
 	}
