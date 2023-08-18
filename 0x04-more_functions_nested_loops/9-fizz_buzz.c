@@ -2,9 +2,9 @@
 #include <stdio.h>
 /**
  * main - the funtions main code
- *
+ * fizz_buzz - function for the main
  * fizz_buzz: funtion defination that does the magic
- * Return: 1 or 0
+ * Return: 0 Always
  *
  */
 
@@ -16,10 +16,12 @@ int main(void)
 	return (0);
 }
 
-
+/* fizz_buzz - function for the main */
 void fizz_buzz(void) /* fizz_buzz - function for the main */
 {
-	for (int i = 1; i <= 100; i++)
+	int i;
+
+	for (i = 1; i <= 100; i++)
 	{
 
 		if (i % 3 == 0)
