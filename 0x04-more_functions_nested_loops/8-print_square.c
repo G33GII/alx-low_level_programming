@@ -1,43 +1,30 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * main - the funtions main code
- *
- * fizz_buzz: funtion defination that does the magic
+ * print_square - the funtions main code
+ * @size: the input value
  * Return: 1 or 0
- *
  */
 
-void fizz_buzz(void);
-
-int main(void)
+void print_square(int size)
 {
-	fizz_buzz();
-	return (0);
-}
-
-
-void fizz_buzz(void) /* fizz_buzz - function for the main */
-{
-	for (int i = 1; i <= 100; i++)
+	if (size <= 0)
 	{
-
-		if (i % 3 == 0)
-		{
-			printf("Fizz ");
-		}
-		else if (i % 5 == 0)
-		{
-			printf("Buzz ");
-		}
-		else if (i % 15 == 0)
-		{
-			printf("FizzBuzz ");
-		}
-		else
-			printf("%d ", i);
+		_putchar('\n');
 	}
+	else
+	{
+		int i, j;
 
-	printf("\n");
+		for (i = 0; i < size; i++)
+		{
+			for (j = 0; j < size; j++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
+		}
+	}
 }
+
 
