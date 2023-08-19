@@ -4,23 +4,10 @@
  * Return: 0 always
  *
  */
-int main(void)
+void print_number(int n)
 {
-	long num = 612852475143;
-	long factor = 2;
 
-	while (num > 1)
-	{
-		if (num % factor == 0)
-		{
-			num = num / factor;
-		}
-		else
-		{
-			factor++;
-		}
-	}
-	printf("%li\n", factor);
 
-	return (0);
+
+
 }
