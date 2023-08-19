@@ -22,5 +22,5 @@ int main(void)
 	}
 	printf("%li\n", factor);
 
-	return 0;
+	return (0);
 }
