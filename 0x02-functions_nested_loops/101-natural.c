@@ -8,16 +8,13 @@
 
 int main(void)
 {
-	unsigned int i, j, sum = 0, sum2 = 0;
+	unsigned int i, sum = 0;
 
-	for (i = 3; i < 1024; i += 3)
+	for(i = 0; i < 1024; i++)
 	{
+		if ((i % 3 == 0) || (i % 5 == 0))
 		sum += i;
 	}
-	for (j = 5; j < 1024; j += 5)
-	{
-		sum2 += j;
-	}
-	printf("%i\n", sum2 + sum);
+	printf("%i\n", sum);
 	return (0);
 }
