@@ -14,7 +14,7 @@ int main(void)
 	long add;
 
 	printf("1, 2");
-	for (i = 0; i < 47; i++)
+	for (i = 0; i < 48; i++)
 	{
 		add = f_0 + f_1;
 		printf(", %li", add);
