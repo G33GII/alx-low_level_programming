@@ -1,35 +1,27 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 /**
- * print_number - function
- * @n: input variable
- * Return: 0 always
- *
+ * print_number - main function
+ * @num: funtion input
  */
+
 void print_number(int n)
 {
-	int reversed;
+	unsigned int num;
 
 	if (n < 0)
 	{
-		_putchar('-');
-		n = -n;
+		putchar ('-');
+		num = -n;
 	}
-	while (n > 0)
+	else
 	{
-		reversed = reversed * 10 + (n % 10);
-		n /= 10;
+		num = n;
 	}
 
-	if (reversed == 0)
+	if (num / 10)
 	{
-		_putchar('0');
-	} else
-	{
-		while (reversed > 0)
-		{
-			_putchar('0' + (reversed % 10));
-			reversed /= 10;
-		}
+		print_number(num % 10);  
 	}
+	putchar (num % 10 + 1);
 }
