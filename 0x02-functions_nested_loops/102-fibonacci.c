@@ -9,11 +9,12 @@
 int main(void)
 {
 	int i;
-	long f_0 = 0;
-	long f_1 = 1;
+	long f_0 = 1;
+	long f_1 = 2;
 	long add;
 
-	for (i = 0; i < 50; i++)
+	printf("1, 2");
+	for (i = 0; i < 47; i++)
 	{
 		add = f_0 + f_1;
 		printf(", %li", add);
