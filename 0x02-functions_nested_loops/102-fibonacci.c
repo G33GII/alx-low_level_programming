@@ -13,7 +13,6 @@ int main(void)
 	long f_1 = 1;
 	long add;
 
-	printf("1");
 	for (i = 0; i < 50; i++)
 	{
 		add = f_0 + f_1;
