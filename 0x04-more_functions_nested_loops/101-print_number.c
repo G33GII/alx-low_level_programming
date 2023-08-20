@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * print_number - main function
- * @num: funtion input
+ * @n: funtion input
  */
 
 void print_number(int n)
@@ -11,8 +11,8 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		putchar ('-');
 		num = -n;
+		_putchar('-');
 	}
 	else
 	{
@@ -21,7 +21,9 @@ void print_number(int n)
 
 	if (num / 10)
 	{
-		print_number(num % 10);  
+		print_number(num / 10);
 	}
-	putchar (num % 10 + 1);
+
+	_putchar((num % 10) + '0');
+
 }
