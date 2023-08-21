@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _strlen - the swap function interchanges the values for its inputs
- * @s: and the value in b will be swapped for the value in a
- * Return: len of string..
+ * _strlen - calculates the length of characters in a char
+ * @s: a copy of the string to be cunted.
+ * Return: len of string.
  *
  */
 int _strlen(char *s)
