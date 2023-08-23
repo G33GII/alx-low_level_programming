@@ -1,13 +1,15 @@
-#include "main.h"
+nclude "main.h"
+
 /**
- * _putchar - This is the function that writes to standard output
- * @c: Thisi is the variable that holds the value passed to the function
- * which is a char.
- * Return: int to std output
+ * _putchar - Writes a character to the standard output.
+ * @c: The character to be written.
  *
+ * Return: On success, returns the number of characters written.
+ *         On error, returns -1 and sets errno appropriately.
  */
 
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	    return (write(1, &c, 1));
 }
+
