@@ -12,6 +12,7 @@ int _putchar(char c);
  * Returns: A pointer to the modified dest string.
  */
 char *_strcat(char *dest, char *src);
+char *_strncat(char *dest, char *src, int n);
 
 #endif /* MAIN_H */
 

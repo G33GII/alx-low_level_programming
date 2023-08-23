@@ -1,15 +1,16 @@
 #include "main.h"
 
 /*
- * _strcat - Concatenates two strings
+ * _strncat - Concatenates two strings up to n characters
  *
  * @dest: The destination string to which src will be appended.
  * @src: The source string that will be appended to dest.
+ * @n: The maximum number of characters from src to append.
  *
  * Returns: A pointer to the modified dest string.
  */
 
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	int i = 0;
 	int j = 0;
@@ -20,14 +21,21 @@ char *_strcat(char *dest, char *src)
 		i++;
 	}
 
-	/* Append characters from src to dest */
-	while (src[j] != '\0')
+	/* Append characters from src to dest up to n characters */
+	while (j < n && src[j] != '\0')
 	{
 		dest[i] = src[j];
 		i++;
 		j++;
 	}
 
+	/* Add null terminator to dest if necessary */
+	if (j < n)
+	{
+		dest[i] = '\0';
+	}
+
 	/* Return the modified dest string */
 	return (dest);
 }
+
