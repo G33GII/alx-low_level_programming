@@ -1,4 +1,4 @@
-#introduction to C Programming Repository
+## introduction to C Programming Repository
 
 Welcome to the "Introduction to C Programming" repository! This repository serves as a learning resource for those interested in getting started with C programming.
 
