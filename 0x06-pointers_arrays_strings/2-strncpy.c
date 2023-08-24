@@ -26,10 +26,6 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		dest[k] = '\0';
 	}
-	else if (k >= n)
-	{
-		dest[n - 1] = '\0'; /* Ensure null-terminated, even if n is reached */
-	}
 
 	/* Return the modified dest string */
 	return (dest);
