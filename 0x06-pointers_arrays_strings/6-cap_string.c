@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * cap_string - Capitalizes the first letter of each word in a string
  * @str: The string to be modified.
@@ -13,18 +12,25 @@ char *cap_string(char *str)
 
 	while (str[i] != '\0')
 	{
-		/* Capitalize the first letter of the string */
-		if (i == 0 && str[i] >= 'a' && str[i] <= 'z')
+		/* Capitalize the first letter after specified delimiters or at the beginning */
+		if (i == 0 ||
+				str[i - 1] == ' ' ||
+				str[i - 1] == '\t' ||
+				str[i - 1] == '\n' ||
+				str[i - 1] == ',' ||
+				str[i - 1] == ';' ||
+				str[i - 1] == '.' ||
+				str[i - 1] == '!' ||
+				str[i - 1] == '?' ||
+				str[i - 1] == '"' ||
+				str[i - 1] == '(' ||
+				str[i - 1] == ')' ||
+				str[i - 1] == '{' ||
+				str[i - 1] == '}')
 		{
-			str[i] = str[i] - ('a' - 'A');
-		}
-
-		/* Capitalize the first letter after a space or period */
-		if (str[i] == ' ' || str[i] == '.')
-		{
-			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+			if (str[i] >= 'a' && str[i] <= 'z')
 			{
-				str[i + 1] = str[i + 1] - ('a' - 'A');
+				str[i] = str[i] - ('a' - 'A'); /* Convert lowercase to uppercase */
 			}
 		}
 
