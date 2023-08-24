@@ -17,7 +17,7 @@ char *leet(char *str)
 {
 	int i, j;
 	char g[] = "aAeEoOlLtT"; /* Original characters to be replaced */
-	char f[] = "4433007711"; /* Leet equivalents */
+	char f[] = "4433001177"; /* Leet equivalents */
 
 	/* Iterate through each character in the input string */
 	for (i = 0; str[i] != '\0'; i++)
