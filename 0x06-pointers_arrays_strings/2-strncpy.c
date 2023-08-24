@@ -15,16 +15,17 @@ char *_strncpy(char *dest, char *src, int n)
 	int j = 0;
 
 	/* Append characters from src to dest up to n characters */
-	while (j < n && src[j] != '\0')
+	while (k < n && src[k] != '\0')
 	{
 		dest[j] = src[j];
-		j++;
+		k++;
 	}
 
 	/* Add null terminator to dest if necessary */
-	if (j < n)
+	if (k < n)
 	{
-		dest[j] = '\0';
+		dest[k] = '\0';
+		k++;
 	}
 
 	/* Return the modified dest string */
