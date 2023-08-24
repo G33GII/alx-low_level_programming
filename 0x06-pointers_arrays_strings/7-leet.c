@@ -1,23 +1,19 @@
 #include "main.h"
 
- /**
-  * leet - Translates a string to leetspeak
-  * @str: The string to be translated.
-  *
-  * This function converts characters
-  * in the given string to their leetspeak equivalents.
-  *
-  * It modifies the original string
-  * and
-  *
-  * Return: a pointer to the modified string.
-  */
-
+/**
+ * leet - Translates a string to leetspeak
+ * @str: The string to be translated.
+ * Return: str value, a pointer to the modified string.
+ *
+ * This function converts characters
+ * in the given string to their leetspeak equivalents.
+ * It modifies the original string and returns str
+ */
 char *leet(char *str)
 {
 	int i, j;
 	char g[] = "aAeEoOlLtT"; /* Original characters to be replaced */
-	char f[] = "4433001177"; /* Leet equivalents */
+	char f[] = "4433001177"; /* Leet - equivalents */
 
 	/* Iterate through each character in the input string */
 	for (i = 0; str[i] != '\0'; i++)
