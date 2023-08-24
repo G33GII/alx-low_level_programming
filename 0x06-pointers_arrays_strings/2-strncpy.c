@@ -14,7 +14,7 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	int k = 0;
 
-	/* Append characters from src to dest up to n characters */
+	/* Copy characters from src to dest up to n characters */
 	while (k < n && src[k] != '\0')
 	{
 		dest[k] = src[k];
@@ -25,10 +25,14 @@ char *_strncpy(char *dest, char *src, int n)
 	if (k < n)
 	{
 		dest[k] = '\0';
-		k++;
+	}
+	else if (k >= n)
+	{
+		dest[n - 1] = '\0'; /* Ensure null-terminated, even if n is reached */
 	}
 
 	/* Return the modified dest string */
 	return (dest);
 }
+
 
