@@ -37,5 +37,7 @@ char *leet(char *str);
 /* Function prototype for rot13 */
 char *rot13(char *str);
 
+void print_number(int n);
+
 #endif /* MAIN_H */
 
