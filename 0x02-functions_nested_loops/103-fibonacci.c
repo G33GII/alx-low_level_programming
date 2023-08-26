@@ -9,11 +9,9 @@
 int main(void)
 {
 	int m;
-	long f_1 = 1;
+	long f_1 = 1, n = 2;
 	long f_2 = 2;
 	long sum = 0;
-
-	printf("%li, %li", f_1, f_2);
 
 	for (m = 0; sum <= 4000000; m++)
 	{
@@ -23,7 +21,8 @@ int main(void)
 		f_2 = sum;
 
 		if (sum % 2 == 0)
-			printf(", %li", sum);
+			n += sum;
 	}
+	printf("%li", n);
 	return (0);
 }
