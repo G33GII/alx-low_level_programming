@@ -23,6 +23,6 @@ int main(void)
 		if (sum % 2 == 0)
 			n += sum;
 	}
-	printf("%li", n);
+	printf("%li\n", n);
 	return (0);
 }
