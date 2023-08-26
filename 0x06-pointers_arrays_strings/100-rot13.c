@@ -34,8 +34,6 @@ char rot_cypher[] =
 							 /*  corresponding ROT13 character */
 				break; /* Exit the loop, as the replacement has been done */
 			}
-			else
-				continue;
 		}
 	}
 
