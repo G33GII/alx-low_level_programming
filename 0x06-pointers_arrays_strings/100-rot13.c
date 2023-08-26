@@ -16,15 +16,15 @@ char *rot13(char *str)
 {
 	int m, n;
 char string_alphabets[] =
-	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	"aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
 char rot_cypher[] =
-	"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	"nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
 
 	/* Iterate through each character in the input string */
 	for (m = 0; str[m] != '\0'; m++)
 	{
 		/* Iterate through each character in the string_alphabets array */
-		for (n = 0; n < '\0'; n++)
+		for (n = 0; string_alphabets[n] != '\0'; n++)
 		{
 			/* If the current character in the input */
 			 /* matches a character in string_alphabets */
@@ -34,9 +34,10 @@ char rot_cypher[] =
 							 /*  corresponding ROT13 character */
 				break; /* Exit the loop, as the replacement has been done */
 			}
+			else
+				continue;
 		}
 	}
 
 	return (str); /* Return the modified string */
 }
-
