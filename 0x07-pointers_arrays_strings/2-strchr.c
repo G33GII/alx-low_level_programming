@@ -16,7 +16,7 @@ char *_strchr(char *s, char c)
 	for (f = 0; s[f] != '\0'; f++)
 	{
 		if (s[f] == c)
-			return (&s[f]); /* Return pointer to the found character */
+			return (s + f); /* Return pointer to the found character */
 	}
 	return (NULL); /* Character not found, return NULL */
 }
