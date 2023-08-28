@@ -18,5 +18,5 @@ char *_strchr(char *s, char c)
 		if (s[f] == c)
 			return (s + f); /* Return pointer to the found character */
 	}
-	return (NULL); /* Character not found, return NULL */
+	return (0); /* Character not found, return NULL */
 }
