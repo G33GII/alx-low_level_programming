@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -11,15 +12,11 @@
 
 char *_memset(char *s, char b, unsigned int n)
 {
-	if (s == NULL)
-		return;
 	unsigned int i; /* Loop counter */
 
 	for (i = 0; i < n; i++)
 	{
-		*s = b; /* Set the current byte to the specified value */
-		s++;   /* Move to the next byte */
+		s[i] = b; /* Set byte value */
 	}
-	return (s);
+	return (s); /* Return original memory block pointer */
 }
-
