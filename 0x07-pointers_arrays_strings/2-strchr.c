@@ -12,11 +12,12 @@ char *_strchr(char *s, char c)
 {
 	while (*s != '\0') /* Loop until end of string */
 	{	/* Check if current character matches the target character */
+		s++;
 		if (*s == c)
 		{
 			return (s); /* Return pointer to the found character */
 		}
-		s++; /* Move to the next character in the string */
+		 /* Move to the next character in the string */
 	}
 	return (0); /* Character not found, return NULL */
 }
