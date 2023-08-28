@@ -13,7 +13,7 @@ char *_strchr(char *s, char c)
 {
 	int f; /* Loop counter */
 
-	for (f = 0; s[f] != '\0'; f++)
+	for (f = 0; s[f] >= '\0'; f++)
 	{
 		if (s[f] == c)
 			return (s + f); /* Return pointer to the found character */
