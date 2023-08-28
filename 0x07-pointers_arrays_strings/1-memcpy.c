@@ -11,12 +11,11 @@
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i; /* Loop counter */
+	unsigned int c; /* Loop counter */
 
-	for (i = 0; i < n; i++)
+	for (c = 0; c < n; c++)
 	{
-		src[i] = dest[i]; /* Copy byte from source to destination */
+		dest[c] = src[c]; /* Copy byte from source to destination */
 	}
 	return (dest); /* Return pointer to the destination memory */
 }
-
