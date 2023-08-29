@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_diagsums - Prints the sum of the main
  * diagonal and secondary diagonal elements of a matrix.
