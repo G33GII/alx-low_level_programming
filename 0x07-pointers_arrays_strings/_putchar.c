@@ -1,11 +1,11 @@
-#include "main.h"
+#include <unistd.h>
 /**
 * main - puts a character on std output
 * Return: 0 Always
 */
 
 
-int _putchar(char n)
+int _putchar(char c)
 {
-	return (write(1, &n, 1));
+	return (write(1, &c, 1));
 }
