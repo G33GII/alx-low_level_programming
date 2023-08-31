@@ -11,27 +11,27 @@
  */
 int prime(int n, int f)
 {
-    if (n == f || n == 2 || n == 3)
-        return (1);
-    if (n % f == 0)
-        return (0);
-    return (prime(n, f + 1));
+	if (n == f || n == 2 || n == 3)
+		return (1);
+	if (n % f == 0)
+		return (0);
+	return (prime(n, f + 1));
 }
 
 /**
  * is_prime_number - Main function to check if a number is prime.
  * @n: The number to be checked for primality.
  *
- * This function returns 1 if the given number 'n' is a prime number,
+ * Return: This function returns 1 if the given number 'n' is a prime number,
  * and 0 if it's not.
  * It handles special cases (negative, 0, and 1),
  * and then calls the 'prime' helper
- * function to perform the primality 
+ * function to perform the primality
  * check recursively starting from factor 2.
  */
 int is_prime_number(int n)
 {
-    if (n < 0 || n == 0 || n == 1)
-        return (0);
-    return (prime(n, 2));    
+	if (n < 0 || n == 0 || n == 1)
+		return (0);
+	return (prime(n, 2));
 }
