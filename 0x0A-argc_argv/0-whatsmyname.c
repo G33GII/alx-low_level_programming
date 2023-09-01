@@ -10,8 +10,9 @@
  * which is stored in argv[0].
  */
 
-int main(int argc((unused)), char* argv[])
+int main(int argc, char* argv[])
 {
+	(void)argc;
 	/* Print the program name (argv[0]) using the format specifier %s */
 	printf("%s", argv[0]);
 
