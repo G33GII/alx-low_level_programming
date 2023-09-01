@@ -16,11 +16,11 @@
 
 int main(int argc, char *argv[])
 {
-    (void)argv; /* Ignoring the command-line arguments */
+	(void)argv; /* Ignoring the command-line arguments */
 
-    /* Print the number of arguments passed (excluding the program name) */
-    printf("%d\n", argc - 1);
+	/* Print the number of arguments passed (excluding the program name) */
+	printf("%d\n", argc - 1);
 
-    /* Return 0 to indicate successful program execution */
-    return (0);
+	/* Return 0 to indicate successful program execution */
+	return (0);
 }
