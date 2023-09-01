@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	}
 
 	/* Print the result of the multiplication */
-	printf("Result: %d\n", result);
+	printf("%d\n", result);
 
 	return (0); /* Return 0 to indicate successful execution */
 }
