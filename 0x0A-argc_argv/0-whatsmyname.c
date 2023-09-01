@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
 	(void)argc;
 	/* Print the program name (argv[0]) using the format specifier %s */
-	printf("%s", argv[0]);
+	printf("%s", *argv);
 
 	/* Return 0 to indicate successful program execution */
 	return (0);
