@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - Entry point of the program
@@ -13,8 +12,8 @@
 int main(int argc, char *argv[])
 {
 	(void)argc;
-	/* Print the program name (argv[0]) using the format specifier %s */
-	printf("%s", *argv);
+/* Print the program name (argv[0]) using the format specifier %s */
+	printf("%s\n", *argv);
 
 	/* Return 0 to indicate successful program execution */
 	return (0);
