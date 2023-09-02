@@ -13,17 +13,17 @@ int main(void)
 
 	printf("%lu", f);          /* Print the first Fibonacci number */
 
-	/* Generate and print the next 98 Fibonacci numbers */
+	/* Generate and print the next 90 Fibonacci numbers */
 	for (m = 1; m < 91; m++)
 	{
 		printf(", %lu", s);	/* Print the current Fibonacci number */
 
-		/* Calculate the next Fibonacci number */
+		/* Calculate the next Fibonacci number  1, 2, 3, 5, 8, 13, 21*/
 		s = s + f;
 		f = s - f;
 	}
-	/* Splitting and printing the remaining Fibonacci numbers */
-	f1 = (f / 1000000000);
+	/* Splitting and printing the remaining 8 Fibonacci numbers */
+	f1 = (f / 1000000000); /* f1 - 2,880,067,194 . f2 -37081612 */
 	f2 = (f % 1000000000);
 	s1 = (s / 1000000000);
 	s2 = (s % 1000000000);
