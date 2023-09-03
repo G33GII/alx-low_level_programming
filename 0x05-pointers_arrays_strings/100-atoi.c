@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include "main.h"
 /**
-* _atoi - function name
-* 
-* @s: source
-* Return: an integer.
-*/
+ * _atoi - function name
+ * @s: source
+ * Return: an integer.
+ */
 int _atoi(char *s)
 {
 	unsigned int number = 0, n = 1;
@@ -14,7 +13,7 @@ int _atoi(char *s)
 	{
 		if (*s == '-')
 			n = -1;
-		else if (*s == ' ' || *s == '\t' || *s == '+')
+		if (*s == ' ' || *s == '\t' || *s == '+')
 			n = 1;
 		s++;
 	}
@@ -26,6 +25,6 @@ int _atoi(char *s)
 
 	if (number == 0)
 		return (0);
-	
+
 	return (number * n);
 }
