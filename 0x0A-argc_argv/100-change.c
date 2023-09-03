@@ -48,6 +48,6 @@ int main(int argc, char *argv[])
 		p -= 1;
 		change++;
 	}	/* Print the minimum number of coins needed to make change. */
-	printf("%d", change);
+	printf("%d\n", change);
 	return (0); /* Exit with a success code. */
 }
