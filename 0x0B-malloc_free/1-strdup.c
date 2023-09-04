@@ -25,6 +25,8 @@ char *_strdup(char *str)
 	}
 	if (strlen(b) != idx)
 		return (0);
+	b[m] = '\0';
+
 
 	return (b);
 }
