@@ -16,42 +16,46 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	size_t idx, idz = 0, z;
-	char *sx;
+	size_t length, index = 0, z;
+	char *New_str;
 
 	/* Determine the length of the resulting string */
 	if (s1 == NULL && s2 == NULL)
-		idx = 1;
+	 length = 1;
 	else if (s1 != NULL && s2 != NULL)
-		idx = strlen(s1) + strlen(s2) + 1;
+	 length = strlen(s1) + strlen(s2) + 1;
 	else if (s1 == NULL && s2 != NULL)
-		idx = strlen(s2) + 1;
+	 length = strlen(s2) + 1;
 	else if (s1 != NULL && s2 == NULL)
-		idx = strlen(s1) + 1;
+	 length = strlen(s1) + 1;
 	/* Allocate memory for the resulting string */
-	sx = malloc(idx * sizeof(char));
+	New_str = malloc(length * sizeof(char));
 	/* Copy characters from s1 to the result, if s1 is not NULL */
+
+	if (New_str == NULL)
+        return (0);
+
 	if (s1 != NULL)
 	{
-		for (idz = 0; idz < idx; idz++)
+		for (index = 0; index < length; index++)
 		{
-			if (s1[idz] == '\0')
+			if (s1[index] == '\0')
 				break;
-			sx[idz] = s1[idz];
+			New_str[index] = s1[index];
 		}
 	}
 	/* Copy characters from s2 to the result, if s2 is not NULL */
 	if (s2 != NULL)
 	{
-		for (z = 0; z < idx; idz++, z++)
+		for (z = 0; z < length; index++, z++)
 		{
 			if (s2[z] == '\0')
 				break;
-			sx[idz] = s2[z];
+			New_str[index] = s2[z];
 		}
 	}
 	/* Null-terminate the resulting string */
-	sx[idz] = '\0';
+	New_str[index] = '\0';
 	/* Return the concatenated string */
-	return (sx);
+	return (New_str);
 }
