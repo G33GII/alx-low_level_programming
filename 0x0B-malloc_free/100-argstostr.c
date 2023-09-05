@@ -31,7 +31,7 @@ char *argstostr(int ac, char **av)
 		total_length += strlen(av[x]) + 1; /* +1 for the newline character */
 	}
 	/* Allocate memory for the concatenated string */
-	result = malloc(total_length * sizeof(char));
+	result = malloc((total_length + 1) * sizeof(char));
 	if (result == NULL)
 	{
 		/* Return NULL if memory allocation fails */
