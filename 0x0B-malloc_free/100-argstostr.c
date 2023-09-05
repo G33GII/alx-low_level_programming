@@ -47,7 +47,7 @@ char *argstostr(int ac, char **av)
 		*current = '\n'; /* Add a newline character between concatenated strings */
 		current++;
 	}
-	*(current - 1)= '\n';
-	*(current ) = '\0'; /* Replace the last newline with a null terminator */
+	*(current - 1) = '\n';
+	*(current) = '\0'; /* Replace the last newline with a null terminator */
 	return (result);
 }
