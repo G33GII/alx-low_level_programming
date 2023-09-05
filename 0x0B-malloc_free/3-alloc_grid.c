@@ -33,4 +33,10 @@ int **alloc_grid(int width, int height)
 			rxx[x][z] = 0; /* Initialize each element to 0 */
 	}
 	return (rxx);
+
+	/* freeing malloc */
+	for (x = 0; x < height; x++)
+		free(rxx[x]);
+
+	free(rxx);
 }
