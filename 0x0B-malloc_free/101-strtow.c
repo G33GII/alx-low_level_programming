@@ -9,10 +9,10 @@
 
 int word_count(char *s)
 {
-	int wx = 0;    /* Word count */
+	int wx = 0, x;    /* Word count */
 	int flag = 0;  /* Flag to track word boundaries */
 
-	for (int x = 0; s[x] != '\0'; x++)
+	for (x = 0; s[x] != '\0'; x++)
 	{
 		if (s[x] == ' ')
 		{
