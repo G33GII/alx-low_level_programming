@@ -38,16 +38,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		sxr[x] = s1[x];
 		x++;
 	}
-
 	/* Concatenate n characters from s2 if n < lzn */
 	while (n < lzn && x < (lxn + n))
+	{
 		sxr[x++] = s2[z++];
-
+	}
 	/* Concatenate the remaining characters from s2 if n >= lzn */
 	while (n >= lzn && x < (lxn + lzn))
+	{
 		sxr[x++] = s2[z++];
+	}
 
 	sxr[x] = '\0'; /* Null-terminate the concatenated string */
-
 	return (sxr);
 }
