@@ -1,5 +1,5 @@
-#include <stdio.h>        /* Include standard input/output library. */
-#include <stdlib.h>       /* Include standard library. */
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - Entry point of the program.
@@ -11,6 +11,6 @@
  */
 int main(void)
 {
-	printf("%s", __FILE__);  /* Print the name of the current source file. */
+	printf("%s\n", __FILE__);  /* Print the name of the current source file. */
 	return (0);              /* Return 0 to indicate successful execution. */
 }
