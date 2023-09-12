@@ -1,5 +1,6 @@
 #include "dog.h"
 
+
 /**
  * new_dog - creates a new dog structure
  * @name: Name of the dog
@@ -12,7 +13,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/* Allocate memory for new dog */
 	dog_t *n_x;
 
-		n_x = malloc(sizeof(dog_t));
+	n_x = malloc(sizeof(dog_t));
 	if (!n_x) /* If allocation fails, return NULL */
 		return (NULL);
 
