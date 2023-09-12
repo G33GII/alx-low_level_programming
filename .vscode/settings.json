@@ -57,6 +57,7 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp.dimInactiveRegions": true,
   "files.associations": {
-    "3-function_like_macro.h": "c"
+    "3-function_like_macro.h": "c",
+    "stdlib.h": "c"
   }
 }
