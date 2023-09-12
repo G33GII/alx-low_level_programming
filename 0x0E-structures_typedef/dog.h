@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+
 /**
  * struct dog - Defines a dog's attributes
  * @name: Dog's name
@@ -21,4 +22,7 @@ struct dog
 };
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
+
+
 #endif
