@@ -6,7 +6,7 @@
  * @name: A pointer to a null-terminated string containing the name to print.
  * @f: A pointer to a function that takes a pointer to a character string
  *      (name) as its parameter and performs the actual printing.
- *
+ * Return: Void
  * This function takes a name and a pointer to a printing function as
  * parameters. It invokes the provided printing function to display the name.
  */
