@@ -9,16 +9,26 @@
 
 int (*get_op_func(char *s))(int, int)
 {
-	if (*s == '*')  /* Check if the operator is multiplication */
-		return (op_mul);
-	else if (*s == '+')  /* Check if the operator is addition */
-		return (op_add);
-	else if (*s == '-')  /* Check if the operator is subtraction */
-		return (op_sub);
-	else if (*s == '/')  /* Check if the operator is division */
-		return (op_div);
-	else if (*s == '%')  /* Check if the operator is modulo */
-		return (op_mod);
-	else
-		return (NULL);  /* Return NULL if operator is not recognized */
+	int x = 0;  /* Initialize x to 0 */
+
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
+
+	while (ops[x].op != NULL)  /* Iterate through the ops array */
+	{
+		if (strcmp(s, ops[x].op) == 0)  /* Compare operator strings */
+		{
+			return (ops[x].f);  /* Return the corresponding function pointer */
+		}
+		x++;  /* Increment x to move to the next element in ops */
+	}
+
+	return (NULL);  /* Operator not found, return NULL */
+
 }
