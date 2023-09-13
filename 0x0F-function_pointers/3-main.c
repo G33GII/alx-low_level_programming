@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
 	int num1, num2;
 	char *operator;
-	/* int (*x_p[])(int, int); */
+
 	int (*z_func)(int, int);
 
 	operator = "+-*/%";
@@ -38,10 +38,7 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 
-	/* x_p = {op_add, op_sub, op_mul, op_div, op_mod};*/
-
 	z_func = get_op_func(argv[2]);
-
 
 	printf("%d\n", z_func(num1, num2));
 
