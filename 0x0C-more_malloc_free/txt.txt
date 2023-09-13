@@ -1,0 +1,78 @@
+       i= 0  1
+ digit1 =[5][4] // len1 of 54 is 2 = digit1[0] = 5// digit1[1] = 4
+       j= 0  1
+ digit2 =[2][8] // len2 of 28 is 2 = digit2[0] = 2// digit2[1] = 8
+ .............................................................
+ formular to calculate pos
+ pos = len of the first digit + len of the second digit - 1 - i - j
+ ...............................................................
+ 1st
+ pos = 2 + 2 - 1 - 0 - 0 =  pos = 3;
+ 2nd
+ pos = 2+2 -1 - 0 - 1 = pos = 2;
+ 3rd
+ pos = 2 + 2 - 1 -1 - 0 =  pos = 2;
+ 4th
+ pos = 2 + 2 - 1 - 1 - 1 = pos = 1;
+ len = 4                                                  0   1   2   3
+ // first execution i = 0 and j = 0 pos = 3, resultarray=[0] [0] [0] [0]
+ ....................................................................
+ num1 = digit1[len1 - 1 -  i]  digit1[1 - 0] = 4
+ num2 = digit2[len2 - 1 -  j]  digit2[1 - 0] =8
+             4  *  8    = 32
+ product = num1 * num2; =  32
+            pos              pos
+ resultarray[pos]  = resultarray[pos]  + product; = 32;
+               [0] [0] [0] [32]
+                0   1   2   3
+ resultarray = [0] [0] [3] [2] 
+               pos  
+ if resultarray[pos] > 9 then split
+ resultarray[pos - 1] = resultarray[pos - 1]  + (resultarray[pos] / 10);// =>(resultarray[pos - 1] + 32/10)= 3)
+  resultarray[pos] = resultarray[pos] % 10;=> 32 % 10 = 2;
+  .......................................................................
+                                                            0   1   2   3
+  //second execution i = 0 and j = 1 pos = 2,resultarray = [0] [0] [3] [2]
+  ......................................................................
+  num1 = digit1[1 -  i]  digit1[1] = 4
+ num2 = digit2[1 - j]  digit2[0] = 2
+             4  *  2   = 8
+ product = num1 * num2; =  8
+ resultarray[pos]  = resultarray[pos]  + product; = 3 + 8 = 11
+               [0] [0] [11] [2]
+                0   1   2   3
+ resultarray = [0] [1] [1] [2]
+ if resultarray[pos] > 9 then split
+ resultarray[pos - 1] = resultarray[pos - 1]  + (resultarray[pos] / 10);// =>(resultarray[pos - 1] + 11/10)= 1)
+  resultarray[pos] = resultarray[pos] % 10;=> 11 % 10 = 1;
+                                                             0   1   2   3
+   //thrid  execution i = 1 and j = 0 pos = 2,resultarray = [0] [1] [1] [2]
+  ......................................................................
+  num1 = digit1[1 -  i]  digit1[0] = 5
+ num2 = digit2[1 - j]  digit2[1] = 8
+             5  *  8   = 40
+ product = num1 * num2; =  40
+ resultarray[pos]  = resultarray[pos]  + product; = 1 + 40 = 41;
+               [0] [1] [41] [2]
+                0   1   2   3
+ resultarray = [0] [5] [1] [2]
+ if resultarray[pos] > 9 then split
+ resultarray[pos - 1] = resultarray[pos - 1]  + (resultarray[pos] / 10);// =>(resultarray[pos - 1] + 41/10)= 1 + 4 =5)
+  resultarray[pos] = resultarray[pos] % 10;=> 41 % 10 = 1;
+                                                                 0   1   2   3
+    //fourth  execution i = 1 and j = 1 pos = 1,resultarray = = [0] [5] [1] [2]
+  ......................................................................
+  num1 = digit1[1 -  i]  digit1[0] = 5
+ num2 = digit2[1 - j]  digit2[0] = 2
+             5  *  2   = 10
+ product = num1 * num2; =  10
+ resultarray[pos]  = resultarray[pos]  + product; = 5 + 10 = 15;
+               [0] [15] [1] [2]
+                0   1   2   3
+ resultarray = [1] [5] [1] [2]
+ if resultarray[pos] > 9 then split
+ resultarray[pos - 1] = resultarray[pos - 1]  + (resultarray[pos] / 10);// =>(resultarray[pos - 1] + 15/10)= 0 + 1 =1)
+  resultarray[pos] = resultarray[pos] % 10;=> 15 % 10 = 5;
+  resultarray = [1] [5] [1] [2]
+  at the end you print the array => resultarray
+  remember to remove the the leading zeros if any exist...
