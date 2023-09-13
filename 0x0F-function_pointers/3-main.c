@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 	int (*z_func)(int, int);
 
-	operator = "+-*/%";
+	operator = argv[2];
 
 	if (argv == NULL || argc != 4)
 	{
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (strchr(operator, argv[2][0]) == NULL)
+	if (get_op_func(operator) == NULL || operator[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
