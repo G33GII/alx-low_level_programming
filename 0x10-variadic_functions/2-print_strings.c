@@ -9,11 +9,11 @@
  * @n: The number of strings to print.
  * ...
  * This function takes a variable number of strings and prints them with the
- * specified separator between them.
+ * specified separator between them. If a string is NULL, it prints "(nil)".
  *
  * Example:
- *   print_strings(", ", 3, "Hello", "World", "!");
- *   Output: "Hello, World, !\n"
+ *   print_strings(", ", 4, "Hello", NULL, "World", "!");
+ *   Output: "Hello, (nil), World, !\n"
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
@@ -24,9 +24,14 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	while (x_idx < n)  /* Loop through strings except the last one */
 	{
-		printf("%s", va_arg(x_list, char*));
+		char *str = va_arg(x_list, char*);
 
-		if (x_idx != (n - 1) && separator != NULL) /* Check if not the last string */
+		if (str != NULL)
+			printf("%s", str);
+		else
+			printf("(nil)");
+
+		if (x_idx != (n - 1) && separator != NULL)/* Check if not the last string */
 			printf("%s", separator);
 
 		x_idx++;
