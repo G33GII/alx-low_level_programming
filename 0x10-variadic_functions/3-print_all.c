@@ -39,7 +39,7 @@ void print_all(const char * const format, ...)
 					z_strings = va_arg(x_list, char*);
 					printf("%s%s", x_seperator, z_strings);
 					if (z_strings == NULL)
-						printf("%s%s", x_seperator, "(nil)");
+						printf("%s", "(nil)");
 					break;
 				default:
 					break;
