@@ -1,7 +1,6 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-
 /**
  * print_all - Print formatted data based on a format string.
  * @format: A format string containing type specifiers:
@@ -10,7 +9,6 @@
  *           - 'f' for float
  *           - 's' for string
  */
-
 void print_all(const char * const format, ...)
 {
 	char *z_strings, *x_seperator = "";
@@ -37,11 +35,9 @@ void print_all(const char * const format, ...)
 					break;
 				case 's':
 					z_strings = va_arg(x_list, char*);
-					
 					if (z_strings == NULL)
 						z_strings = "(nil)";
-						
-						printf("%s%s", x_seperator, z_strings);
+					printf("%s%s", x_seperator, z_strings);
 					break;
 				default:
 					x++;
@@ -51,7 +47,6 @@ void print_all(const char * const format, ...)
 			x++;
 		}
 	}
-
 	printf("\n");
 	va_end(x_list);
 }
