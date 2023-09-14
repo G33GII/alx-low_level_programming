@@ -1,4 +1,3 @@
-#include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
 
@@ -6,64 +5,61 @@
  * print_all - Print formatted data based on a format string.
  * @format: A format string containing type specifiers.
  */
-void print_all(const char * const format, ...)
+void print_all(const char *const format, ...)
 {
-    char *s;
-    int a = 0;
-    va_list quarrel;
-    int printed = 0;  /* Track if anything has been printed. */
+    char *z_strings;
+    int x = 0;
+    va_list x_list;
+    int z_printed = 0; /* Track if anything has been printed. */
 
-    va_start(quarrel, format);
+    va_start(x_list, format);
 
     if (format)
     {
-        while (format[a] != '\0')
+        while (format[x] != '\0')
         {
-            switch (format[a])
+            switch (format[x])
             {
                 case 'c':
-                    printf("%c", va_arg(quarrel, int));
-                    printed = 1;  /* Mark that an argument was printed. */
+                    printf("%c", va_arg(x_list, int));
+                    z_printed = 1; /* Mark that an argument was printed. */
                     break;
 
                 case 'i':
-                    printf("%d", va_arg(quarrel, int));
-                    printed = 1;
+                    printf("%d", va_arg(x_list, int));
+                    z_printed = 1;
                     break;
 
                 case 'f':
-                    printf("%f", va_arg(quarrel, double));
-                    printed = 1;
+                    printf("%f", va_arg(x_list, double));
+                    z_printed = 1;
                     break;
 
                 case 's':
                     {
-                        s = va_arg(quarrel, char*);
-                        if (s != NULL)
-                        {
-                            printf("%s", s);
-                            printed = 1;
-                        }
-                        else
+                        z_strings = va_arg(x_list, char *);
+                        if (z_strings == NULL)
                         {
                             printf("(nil)");
-                            printed = 1;
+                            break;
                         }
+                        printf("%s", z_strings);
+                        z_printed = 1;
                         break;
                     }
 
                 default:
                     break;
             }
-            
-            if (format[a + 1] != '\0' && printed)  /* Print comma if an argument was printed. */
+
+            if (format[x + 1] != '\0' && z_printed) /* Print comma if an argument was printed. */
                 printf(", ");
-                
-            a++;
-            printed = 0;  /* Reset the printed flag. */
+
+            x++;
+            z_printed = 0; /* Reset the printed flag. */
         }
     }
 
     printf("\n");
-    va_end(quarrel);
+    va_end(x_list);
 }
