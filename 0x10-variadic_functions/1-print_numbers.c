@@ -22,6 +22,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	va_start(x_list, n);
 
+    if (separator == NULL)
+        exit(1);
+
 	/* Print the first integer without the separator */
 	printf("%d", va_arg(x_list, int));
 
