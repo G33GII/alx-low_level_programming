@@ -37,9 +37,11 @@ void print_all(const char * const format, ...)
 					break;
 				case 's':
 					z_strings = va_arg(x_list, char*);
-					printf("%s%s", x_seperator, z_strings);
+					
 					if (z_strings == NULL)
-						printf("%s%s", x_seperator, "(nil)");
+						z_strings = "(nil)";
+						
+						printf("%s%s", x_seperator, z_strings);
 					break;
 				default:
 					x++;
