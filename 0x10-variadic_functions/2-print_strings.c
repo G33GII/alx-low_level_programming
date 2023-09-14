@@ -24,10 +24,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	while (x_idx < n)  /* Loop through strings except the last one */
 	{
-		char *str = va_arg(x_list, char*);
+		char *x_str = va_arg(x_list, char*);
 
-		if (str != NULL)
-			printf("%s", str);
+		if (x_str != NULL)
+			printf("%s", x_str);
 		else
 			printf("(nil)");
 
