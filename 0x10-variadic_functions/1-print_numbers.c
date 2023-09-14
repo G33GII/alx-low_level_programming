@@ -17,21 +17,16 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int x_idx = 0;  /* Index for iterating through the integers */
-	int z;                   /* Placeholder for the integer values */
 	va_list x_list;          /* Variable argument list */
 
 	va_start(x_list, n);
 
-	if (separator == NULL)
-		exit(1);
-
-	/* Print the first integer without the separator */
-	printf("%d", va_arg(x_list, int));
-
-	while (x_idx < n - 1)  /* Loop through integers except the last one */
+	while (x_idx < n)  /* Loop through integers except the last one */
 	{
-		z = va_arg(x_list, int);
-		printf("%s%d", separator, z);  /* Print the separator and the integer */
+		printf("%d", va_arg(x_list, int));
+
+		if (separator != NULL && x_idx != (n - 1))
+			printf("%s", separator);
 
 		x_idx++;
 	}
