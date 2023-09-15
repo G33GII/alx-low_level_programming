@@ -61,5 +61,6 @@
     "stdlib.h": "c",
     "3-calc.h": "c",
     "string.h": "c"
-  }
+  },
+  "C_Cpp.errorSquiggles": "enabled"
 }
