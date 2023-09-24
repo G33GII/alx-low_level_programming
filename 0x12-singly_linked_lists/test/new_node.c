@@ -12,6 +12,8 @@ typedef struct list_t
 
 
 void insert_node(list_t **head, char*str, int x);
+void insert_node(list_t **head, char*str, int x);
+
 /**
  * 
  * 
@@ -23,11 +25,16 @@ int main()
     head = &tail;
 
     insert_node(&head, "Sa_rah", 6);
+    insert_node_end(&head, "my Love", 100);
 
     return (0);
 }
 
 
+void insert_node(list_t **head, char*str, int x)
+{
+    
+}
 
 
 void insert_node(list_t **head, char *s, int x)
