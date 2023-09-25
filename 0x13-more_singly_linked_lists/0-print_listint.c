@@ -7,6 +7,8 @@
  */
 size_t print_listint(const listint_t *h)
 {
+	size_t node_count;
+	
 	/* Check if the list is empty */
 	if (h == NULL)
 	{
@@ -14,7 +16,7 @@ size_t print_listint(const listint_t *h)
 	}
 
 	/* Initialize node count */
-	size_t node_count = 0;
+	node_count = 0;
 
 	/* Traverse through the linked list */
 	while (h != NULL)
