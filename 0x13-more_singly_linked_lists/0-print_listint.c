@@ -9,11 +9,11 @@ size_t print_listint(const listint_t *h)
 {
 	size_t node_count;
 
-	/* Check if the list is empty */
+	/* Check if the list is empty
 	if (h == NULL)
 	{
 		return (0);
-	}
+	}	*/
 
 	/* Initialize node count */
 	node_count = 0;
