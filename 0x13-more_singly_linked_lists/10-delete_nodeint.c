@@ -14,9 +14,9 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	node_shift = *head;
 
 	if (*head == NULL)
-		{
-			return (-1); /* Return -1 if the list is empty */
-		}
+	{
+		return (-1); /* Return -1 if the list is empty */
+	}
 
 	/* Special case: Delete the first node (index 0) */
 	if (index == 0)
