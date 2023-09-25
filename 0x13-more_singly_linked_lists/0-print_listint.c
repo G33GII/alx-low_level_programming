@@ -13,6 +13,8 @@ size_t print_listint(const listint_t *h)
 	/* Traverse through the linked list */
 	while (h != NULL)
 	{
+		printf("%d\n", h->n);
+
 		/* Increment the node count */
 		node_count++;
 
