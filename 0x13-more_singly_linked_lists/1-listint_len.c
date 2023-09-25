@@ -10,10 +10,19 @@ size_t listint_len(const listint_t *h)
 	/* Initialize node counter */
 	size_t node_count = 0;
 
+	/* Check if the list is empty */
+	if (h == NULL)
+	{
+		return (0);
+	}
+
 	/* Iterate over each node in the linked list */
 	for (; h != NULL; h = h->next, node_count++)
 	{
-		/* No operation inside the loop. We're just counting nodes. */
+		if (node_count == SIZE_MAX)
+		{
+			return (node_count);
+		}
 	}
 
 	/* Return the node count */
