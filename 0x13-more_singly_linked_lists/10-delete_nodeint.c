@@ -27,7 +27,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	}
 
 	/* Traverse the list to find the node before the desired index */
-	while (idx < index - 1)
+	while (idx < index)
 	{
 		if (node_shift == NULL || node_shift->next == NULL)
 		{
