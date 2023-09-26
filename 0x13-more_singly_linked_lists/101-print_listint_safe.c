@@ -12,7 +12,6 @@ size_t print_listint_safe(const listint_t *head)
 
     /* Check if the list is empty */
     if (!head)
-    
     {
         exit(98); /* Exit with code 98 if the list is empty */
     }
