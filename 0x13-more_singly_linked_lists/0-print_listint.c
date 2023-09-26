@@ -9,6 +9,11 @@ size_t print_listint(const listint_t *head)
 {
 	size_t node_count = 0; /* Initialize a counter for the number of nodes */
 
+	if (*head == NULL)
+	{
+		return (NULL); /* Return NULL if the list is empty */
+	}
+
 	/* Traverse the list and print each node's value */
 	while (head != NULL)
 	{
