@@ -20,7 +20,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	/* Special case: Delete the first node (index 0) */
 	if (index == 0)
 	{
-		*head = (*head)->next; /* Update the head to the next node */
+		*head = *head->next; /* Update the head to the next node */
 		free(tmp);         /* Free the deleted node */
 		return (1);
 	}
