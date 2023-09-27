@@ -8,7 +8,7 @@
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *last_node;
+	listint_t *shifter;
 
 	/* Allocate memory for the new node */
 	listint_t *new_node = malloc(sizeof(listint_t));
@@ -31,15 +31,15 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	}
 
 	/* Find the current last node in the list */
-	last_node = *head;
+	shifter = *head;
 
-	while (last_node->next != NULL)
+	while (shifter->next != NULL)
 	{
-		last_node = last_node->next;
+		shifter = shifter->next;
 	}
 
 	/* Add the new node to the end of the list */
-	last_node->next = new_node;
+	shifter->next = new_node;
 
 	return (*head);
 }

@@ -11,7 +11,7 @@ size_t print_listint(const listint_t *head)
 
 	if (head == NULL)
 	{
-		return (0 ); /* Return NULL if the list is empty */
+		return (0); /* Return NULL if the list is empty */
 	}
 
 	/* Traverse the list and print each node's value */
