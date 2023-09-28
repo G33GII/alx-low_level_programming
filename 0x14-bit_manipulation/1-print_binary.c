@@ -7,14 +7,14 @@
  */
 void print_binary(unsigned long int n)
 {
-	int bitPosition, count = 0;
 	unsigned long int currentBit;
+	int bitPosition, idx = 0;
 
 	/**
 	 *  Iterate through the bits from left to right
 	 * (most significant to least significant)
 	 */
-	for (bitPosition = 64; bitPosition >= 0; bitPosition--)
+	for (bitPosition = 63; bitPosition >= 0; bitPosition--)
 	{
 		currentBit = n >> bitPosition;
 
@@ -22,17 +22,17 @@ void print_binary(unsigned long int n)
 		if (currentBit & 1)
 		{
 			_putchar('1');
-			count++;
+			idx++;
 		}
 		/* If leading ones have already been printed, print 0 for trailing zeros */
-		else if (count)
+		else if (idx)
 		{
 			_putchar('0');
 		}
 	}
 
 	/* If there were no '1' bits, print a single '0' to represent zero */
-	if (!count)
+	if (!idx)
 	{
 		_putchar('0');
 	}
