@@ -8,13 +8,14 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int currentBit;
-	int bitPosition, idx = 0;
+	int bitPosition = (sizeof(unsigned long int) * 8) - 1;
+	int idx = 0;
 
 	/**
 	 *  Iterate through the bits from left to right
 	 * (most significant to least significant)
 	 */
-	for (bitPosition = 63; bitPosition >= 0; bitPosition--)
+	while (bitPosition >= 0)
 	{
 		currentBit = n >> bitPosition;
 
@@ -29,6 +30,8 @@ void print_binary(unsigned long int n)
 		{
 			_putchar('0');
 		}
+
+		bitPosition--;
 	}
 
 	/* If there were no '1' bits, print a single '0' to represent zero */
