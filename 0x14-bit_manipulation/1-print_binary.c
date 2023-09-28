@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * printBinary - Function: printBinary
+ * print_binary - Function: printBinary
  * Prints the binary representation of an unsigned long integer.
  * Leading zeros are omitted.
  * @n: The unsigned long integer to be converted and printed.
