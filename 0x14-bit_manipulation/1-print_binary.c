@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- * print_binary - Function: printBinary
- * Prints the binary representation of an unsigned long integer.
- * Leading zeros are omitted.
+ * print_binary - Prints the binary representation of an unsigned long integer.
+ *                Leading zeros are omitted.
  * @n: The unsigned long integer to be converted and printed.
  */
 void print_binary(unsigned long int n)
@@ -12,10 +11,10 @@ void print_binary(unsigned long int n)
 	unsigned long int currentBit;
 
 	/**
-     * Iterate through the bits from left to right
-     * (most significant to least significant)
-     */
-	for (bitPosition = 20; bitPosition >= 0; bitPosition--)
+	 *  Iterate through the bits from left to right
+	 * (most significant to least significant)
+	 */
+	for (bitPosition = 64; bitPosition >= 0; bitPosition--)
 	{
 		currentBit = n >> bitPosition;
 
