@@ -11,19 +11,23 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-    int bitPosition = (sizeof(unsigned long int) * 8) - 1;
-    unsigned int count = 0;
-    unsigned long int exclusive = n ^ m;
+	int bitPosition = (sizeof(unsigned long int) * 8) - 1;
+	unsigned int count = 0;
+	unsigned long int exclusive = n ^ m;
 
-    /* Iterate through the bits from left to right (most significant to least significant) */
-    while (bitPosition >= 0)
-    {
-        unsigned long int current = exclusive >> bitPosition;
-        if (current & 1)
-            count++;
+	/**
+     *  Iterate through the bits from left to right
+     * (most significant to least significant)
+     */
+	while (bitPosition >= 0)
+	{
+		unsigned long int current = exclusive >> bitPosition;
 
-        bitPosition--;
-    }
+		if (current & 1)
+			count++;
 
-    return count;
+		bitPosition--;
+	}
+
+	return (count);
 }
