@@ -29,8 +29,9 @@ int append_text_to_file(const char *filename, char *text_content)
 	writeStatus = write(fileDescriptor, text_content, length);
 
 	/* Check if the file was opened and written to successfully */
-	if (fileDescriptor == -1 || writeStatus == -1)
+	if (fileDescriptor < 0 || writeStatus < 0)
 	{
+		close(fileDescriptor);
 		return (-1);
 	}
 
