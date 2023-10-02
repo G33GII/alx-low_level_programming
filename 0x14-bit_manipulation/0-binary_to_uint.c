@@ -37,7 +37,7 @@ unsigned int binary_to_uint(const char *b)
 /* If the character is '1',add the corresponding binary value to the result. */
 		if (b[i] == '1')
 		{
-			decimal += base;
+			decimal = decimal + base;
 		}
 
 		/* Update the binary place value. */
