@@ -23,12 +23,12 @@ int append_text_to_file(const char *filename, char *text_content)
 			length++;
 
 		/* Open the file in write and append mode */
-		fileDescriptor = open(filename, O_APPENP | O_WRONLY);
+		fileDescriptor = open(filename, O_APPEND | O_WRONLY);
 		if (fileDescriptor < 0)
 			return (-1);
+
 		/* Write the content to the file */
 		writeStatus = write(fileDescriptor, text_content, length);
-
 		/* Check if the file was opened and written to successfully */
 		if (writeStatus < 0)
 		{
