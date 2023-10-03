@@ -21,23 +21,49 @@ int append_text_to_file(const char *filename, char *text_content)
 		length = 0;
 		while (text_content[length])
 			length++;
-	}
 
-	/* Open the file in write and append mode */
-	fileDescriptor = open(filename, O_APPEND);
-	if (fileDescriptor < 0)
-		return (-1);
-	/* Write the content to the file */
-	writeStatus = write(fileDescriptor, text_content, length);
+		/* Open the file in write and append mode */
+		fileDescriptor = open(filename, O_APPENP | O_WRONLY);
+		if (fileDescriptor < 0)
+			return (-1);
+		/* Write the content to the file */
+		writeStatus = write(fileDescriptor, text_content, length);
 
-	/* Check if the file was opened and written to successfully */
-	if (writeStatus < 0)
-	{
-		close(fileDescriptor);
-		return (-1);
+		/* Check if the file was opened and written to successfully */
+		if (writeStatus < 0)
+		{
+			close(fileDescriptor);
+			return (-1);
+		}
 	}
 
 	/* Close the file */
 	close(fileDescriptor);
 	return (1);
 }
+
+
+FILE *fx;
+
+if (filename == NULL)
+	return (-1);
+
+fx = fopen(filename, "a");
+if (fx == NULL)
+	return (-1);
+
+if (text_content != NULL)
+{
+	if (fputs(text_content, fx) == EOF)
+	{
+		perror("fputs");
+		fclose (fx);
+		return (-1);
+
+	}
+
+}
+
+fclose (fx);
+return (1)
+
