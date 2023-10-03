@@ -9,7 +9,7 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	ssize_t fileDescriptor, writeStatus;
-	int length;
+	ssize_t length;
 
 	/* Check if filename is NULL */
 	if (filename == NULL)
@@ -25,11 +25,13 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	/* Open the file in write and append mode */
 	fileDescriptor = open(filename, O_WRONLY | O_APPEND);
+	if (fileDescriptor < 0)
+		return (-1);
 	/* Write the content to the file */
 	writeStatus = write(fileDescriptor, text_content, length);
 
 	/* Check if the file was opened and written to successfully */
-	if (fileDescriptor < 0 || writeStatus < 0)
+	if (writeStatus < 0)
 	{
 		close(fileDescriptor);
 		return (-1);
