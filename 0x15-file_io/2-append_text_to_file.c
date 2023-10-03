@@ -24,7 +24,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 
 	/* Open the file in write and append mode */
-	fileDescriptor = open(filename, O_WRONLY | O_APPEND);
+	fileDescriptor = open(filename, O_APPEND);
 	if (fileDescriptor < 0)
 		return (-1);
 	/* Write the content to the file */
