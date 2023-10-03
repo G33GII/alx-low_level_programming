@@ -8,6 +8,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+#define BFFSZ 1024
+
 /* typedef char* string; */
 
 int _putchar(char c);
