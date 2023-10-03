@@ -1,4 +1,14 @@
+
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3_cp_frm_to.c -o cp
+ 
+ [>) ./cp incitatous Incitatous
+ 
+ [>) cat Incitatous 
 Why you should think twice before putting pictures on social media.
 (What you always wanted to know about @Incitatous)
 #PrivacyAware
 http://imgur.com/a/Mq1tc
+ 
+ [>) code incitatous 
+ 
+ [>)

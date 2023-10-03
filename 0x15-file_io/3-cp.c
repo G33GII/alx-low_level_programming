@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	destinationFileDescriptor = open(destinationFile, O_WRONLY |
 							O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (destinationFileDescriptor == -1)
-		print_error(99, "Can't write to file");
+		print_error(99, "Can't write to NAME_OF_THE_FILE");
 
 	/* Copy the content from source to destination */
 	while ((bytesRead = read(sourceFileDescriptor, buffer, BFFSZ)) > 0)
@@ -40,14 +40,14 @@ int main(int argc, char *argv[])
 	}
 
 	if (bytesRead == -1)
-		print_error(98, "Can't read from file");
+		print_error(98, "Can't read from file NAME_OF_THE_FILE");
 
 	/* Close the file descriptors */
 	if (close(sourceFileDescriptor) == -1)
-		print_error(100, "Can't close fd");
+		print_error(100, "Can't close fd FD_VALUE");
 
 	if (close(destinationFileDescriptor) == -1)
-		print_error(100, "Can't close fd");
+		print_error(100, "Can't close fd FD_VALUE");
 
 	return (0);
 }
