@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	/* Open the source file for reading */
 	sourceFileDescriptor = open(sourceFile, O_RDONLY);
 	if (sourceFileDescriptor == -1)
-		print_error(98, "Can't read from file");
+		print_error(98, "Can't read from file NAME_OF_THE_FILE");
 
 	/* Open the destination file for writing (truncate if it exists) */
 	destinationFileDescriptor = open(destinationFile, O_WRONLY |
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	{
 		bytesWritten = write(destinationFileDescriptor, buffer, bytesRead);
 		if (bytesWritten == -1)
-			print_error(99, "Can't write to file");
+			print_error(99, "Can't write to NAME_OF_THE_FILE");
 	}
 
 	if (bytesRead == -1)
