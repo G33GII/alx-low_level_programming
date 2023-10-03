@@ -41,29 +41,3 @@ int append_text_to_file(const char *filename, char *text_content)
 	close(fileDescriptor);
 	return (1);
 }
-
-
-FILE *fx;
-
-if (filename == NULL)
-	return (-1);
-
-fx = fopen(filename, "a");
-if (fx == NULL)
-	return (-1);
-
-if (text_content != NULL)
-{
-	if (fputs(text_content, fx) == EOF)
-	{
-		perror("fputs");
-		fclose (fx);
-		return (-1);
-
-	}
-
-}
-
-fclose (fx);
-return (1)
-
