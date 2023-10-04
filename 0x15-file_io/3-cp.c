@@ -54,15 +54,11 @@ int main(int argc, char *argv[])
 
 	free(buffer);
 	_close = close(destinationFileDescriptor);
-	if (_close == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %lu\n", destinationFileDescriptor);
-		exit(100);
-	}
 	_close1 = close(sourceFileDescriptor);
-	if (_close1 == -1)
+	if (_close1 == -1 || _close == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %lu\n", sourceFileDescriptor);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %lu\n",
+						(_close == -1) ? destinationFileDescriptor : sourceFileDescriptor);
 		exit(100);
 	}
 	return (0);
