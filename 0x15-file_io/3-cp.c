@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	sourceFileDescriptor = open(sourceFile, O_RDONLY);
 	bytesRead = read(sourceFileDescriptor, buffer, BFFSZ);
 
-	if (sourceFileDescriptor == -1 || bytesRead == -1)
+	if (sourceFileDescriptor < 0 || bytesRead < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", sourceFile);
 		free(buffer);
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	while (bytesRead > 0)
 	{
 		bytesWritten = write(destinationFileDescriptor, buffer, bytesRead);
-		if (destinationFileDescriptor == -1 || bytesWritten == -1)
+		if (destinationFileDescriptor < 0 || bytesWritten < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destinationFile);
 			free(buffer);
@@ -55,10 +55,10 @@ int main(int argc, char *argv[])
 	free(buffer);
 	_close = close(destinationFileDescriptor);
 	_close1 = close(sourceFileDescriptor);
-	if (_close1 == -1 || _close == -1)
+	if (_close1 < 0 || _close < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %lu\n",
-						(_close == -1) ? destinationFileDescriptor : sourceFileDescriptor);
+						(_close < 0) ? destinationFileDescriptor : sourceFileDescriptor);
 		exit(100);
 	}
 	return (0);
