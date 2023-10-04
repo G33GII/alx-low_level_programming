@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		free(buffer);
 		exit(98);
 	}
-	
+
 	destinationFileDescriptor = open(destinationFile,
 			O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
