@@ -9,62 +9,59 @@
 int main(int argc, char *argv[]);
 int main(int argc, char *argv[])
 {
-	ssize_t bytesRead, bytesWritten,
-		sourceFileDescriptor, destinationFileDescriptor, _close1, _close;
-	char *buffer, *sourceFile, *destinationFile;
+	ssize_t rd, wr, srcFd, destFd, closeSrc, closeDest;
+	char *buf, *srcFile, *destFile;
 
-	if (argc != 3 || argv[1] == NULL || argv[2] == NULL)
+	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	sourceFile = argv[1];
-	destinationFile = argv[2];
-	buffer = malloc(sizeof(char) * BFFSZ);
-	if (buffer == NULL)
+	srcFile = argv[1];
+	destFile = argv[2];
+	buf = malloc(sizeof(char) * BFFSZ);
+	if (buf == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destinationFile);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destFile);
 		exit(99);
 	}
 
-	sourceFileDescriptor = open(sourceFile, O_RDONLY);
-	bytesRead = read(sourceFileDescriptor, buffer, BFFSZ);
-	if (sourceFileDescriptor < 0 || bytesRead < 0)
+	srcFd = open(srcFile, O_RDONLY);
+	rd = read(srcFd, buf, BFFSZ);
+	if (srcFd < 0 || rd < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", sourceFile);
-		free(buffer);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", srcFile);
+		free(buf);
 		exit(98);
 	}
 
-	destinationFileDescriptor = open(destinationFile,
-			O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	destFd = open(destFile, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
-	while (bytesRead > 0)
+	while (rd > 0)
 	{
-		bytesWritten = write(destinationFileDescriptor, buffer, bytesRead);
-		if (destinationFileDescriptor < 0 || bytesWritten < 0)
+		wr = write(destFd, buf, rd);
+		if (destFd < 0 || wr < 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destinationFile);
-			free(buffer);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destFile);
+			free(buf);
 			exit(99);
 		}
-		bytesRead = read(sourceFileDescriptor, buffer, BFFSZ);
-		if (bytesRead < 0)
+		rd = read(srcFd, buf, BFFSZ);
+		if (rd < 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", sourceFile);
-			free(buffer);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", srcFile);
+			free(buf);
 			exit(98);
 		}
-		/*destinationFileDescriptor = open(destinationFile, O_WRONLY | O_APPEND);*/
 	}
 
-	free(buffer);
-	_close = close(destinationFileDescriptor);
-	_close1 = close(sourceFileDescriptor);
-	if (_close1 < 0 || _close < 0)
+	free(buf);
+	closeDest = close(destFd);
+	closeSrc = close(srcFd);
+	if (closeSrc < 0 || closeDest < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %lu\n",
-				(_close < 0) ? destinationFileDescriptor : sourceFileDescriptor);
+				(closeDest < 0) ? destFd : srcFd);
 		exit(100);
 	}
 	return (0);
