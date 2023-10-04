@@ -11,7 +11,7 @@ int main(int argc, char *argv[]);
 int main(int argc, char *argv[])
 {
 	ssize_t bytesRead, bytesWritten,
-		sourceFileDescriptor, destinationFileDescriptor;
+	sourceFileDescriptor, destinationFileDescriptor, _close1, _close;
 	char *buffer, *sourceFile, *destinationFile;
 
 	if (argc != 3)
@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
 	}
 	sourceFileDescriptor = open(sourceFile, O_RDONLY);
 	bytesRead = read(sourceFileDescriptor, buffer, BFFSZ);
+
 	if (sourceFileDescriptor == -1 || bytesRead == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", sourceFile);
@@ -37,6 +38,7 @@ int main(int argc, char *argv[])
 	}
 	destinationFileDescriptor = open(destinationFile,
 			O_WRONLY | O_CREAT | O_TRUNC, 0664);
+
 	while (bytesRead > 0)
 	{
 		bytesWritten = write(destinationFileDescriptor, buffer, bytesRead);
@@ -49,9 +51,12 @@ int main(int argc, char *argv[])
 		bytesRead = read(sourceFileDescriptor, buffer, BFFSZ);
 		destinationFileDescriptor = open(destinationFile, O_WRONLY | O_APPEND);
 	}
+
 	free(buffer);
-	if (close(destinationFileDescriptor) == -1 ||
-			close(sourceFileDescriptor) == -1)
+	_close = close(destinationFileDescriptor);
+	_close1 = close(sourceFileDescriptor);
+
+	if (_close == -1 || _close1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", -1);
 		exit(100);
