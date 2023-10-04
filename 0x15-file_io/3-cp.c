@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 		sourceFileDescriptor, destinationFileDescriptor, _close1, _close;
 	char *buffer, *sourceFile, *destinationFile;
 
-	if (argc != 3)
+	if (argc != 3 || argv[1] == NULL || argv[2] == NULL)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
