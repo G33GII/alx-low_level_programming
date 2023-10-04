@@ -29,16 +29,16 @@ int main(int argc, char *argv[])
 	}
 	sourceFileDescriptor = open(sourceFile, O_RDONLY);
 	bytesRead = read(sourceFileDescriptor, buffer, BFFSZ);
+	if (sourceFileDescriptor == -1 || bytesRead == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", sourceFile);
+		free(buffer);
+		exit(98);
+	}
 	destinationFileDescriptor = open(destinationFile,
 			O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	while (bytesRead > 0)
 	{
-		if (sourceFileDescriptor == -1 || bytesRead == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", sourceFile);
-			free(buffer);
-			exit(98);
-		}
 		bytesWritten = write(destinationFileDescriptor, buffer, bytesRead);
 		if (destinationFileDescriptor == -1 || bytesWritten == -1)
 		{
