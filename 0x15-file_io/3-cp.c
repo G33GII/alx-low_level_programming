@@ -7,7 +7,6 @@
  * Return: 0 on success, exit with error code on failure.
  */
 int main(int argc, char *argv[]);
-
 int main(int argc, char *argv[])
 {
 	ssize_t bytesRead, bytesWritten,
@@ -49,6 +48,12 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 		bytesRead = read(sourceFileDescriptor, buffer, BFFSZ);
+		if (bytesRead < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", sourceFile);
+			free(buffer);
+			exit(98);
+		}
 		destinationFileDescriptor = open(destinationFile, O_WRONLY | O_APPEND);
 	}
 
@@ -63,4 +68,3 @@ int main(int argc, char *argv[])
 	}
 	return (0);
 }
-
