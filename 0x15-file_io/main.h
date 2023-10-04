@@ -1,12 +1,12 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <fcntl.h>
+#include <stdio.h>
 
 #define BFFSZ 1024
 
