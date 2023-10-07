@@ -12,7 +12,7 @@ char *_strchr(char *s, char c)
 	int i = 0;
 
 /* Iterate until the end is reached (including the null terminator). */
-	for (; s[i] >= '\0'; i++)
+	for (; s[i] != '\0'; i++)
 	{
 /* If the current character matches 'c', return a pointer to that character. */
 		if (s[i] == c)
