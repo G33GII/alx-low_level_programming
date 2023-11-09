@@ -12,49 +12,44 @@ size_t _len(const dlistint_t *h);
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *_sh = *h;
-	dlistint_t *hld = NULL;
-	dlistint_t *_nw = NULL;
-	size_t lx = 0;
-	unsigned int x = 1;
+	dlistint_t *current = NULL;
+	dlistint_t *new_node = NULL;
 
-	lx = _len(_sh);
-	if ((idx + 1) > lx)
-	{
+	new_node = malloc(sizeof(dlistint_t));
+	if (!new_node)
 		return (NULL);
-	}
+	new_node->n = n;
+	/**
+	 * new_node->next = NULL;
+	 * new_node->prev = NULL;
+	 */
 	if (idx == 0)
 	{
-		add_dnodeint(&(*h), n);
-		return (*h);
+		new_node->next = *h;
+		if (*h)
+			(*h)->prev = new_node;
+		*h = new_node;
+		return (new_node);
 	}
-
-	for  (; x < idx; x++)
-		_sh = _sh->next;
-
-	hld = _sh->next;
-	hld->prev = NULL;
-	_sh->next = NULL;
-	_nw = add_dnodeint_end(&_sh, n);
-	_nw->next = hld;
-	hld->prev = _nw;
-
-	return (*h);
-}
-
-
-/**
- * _len - check the code
- * @h: ptr to the head of the doubly linked list
- * Return: Always EXIT_SUCCESS.
- */
-size_t _len(const dlistint_t *h)
-{
-	const dlistint_t *sx = h;
-	int x = 0;
-
-	for (; sx; sx = sx->next)
-		x++;
-	return (x);
-
+	current = *h;
+	for (; idx > 1; idx--)
+	{
+		if (!current)
+		{
+			free(new_node);
+			return (NULL);
+		}
+		current = current->next;
+	}
+	if (!current)
+	{
+		free(new_node);
+		return (NULL);
+	}
+	new_node->next = current->next;
+	if (current->next)
+		current->next->prev = new_node;
+	new_node->prev = current;
+	current->next = new_node;
+	return (new_node);
 }
