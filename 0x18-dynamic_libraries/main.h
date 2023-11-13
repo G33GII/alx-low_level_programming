@@ -3,7 +3,6 @@
 
 
 #include <stdio.h>
-#include <stdlib.h>
 
 
 char *_memcpy(char *dest, char *src, unsigned int n);
@@ -26,6 +25,13 @@ int _isdigit(int c);
 void _puts(char *s);
 int _atoi(char *s);
 int _abs(int n);
+
+int add(int a, int b);
+int sub(int a, int b);
+int mul(int a, int b);
+int div(int a, int b);
+int mod(int a, int b);
+
 
 
 #endif  /* Include guard */
