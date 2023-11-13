@@ -1,6 +1,7 @@
 #include <unistd.h>
 /**
-* main - puts a character on std output
+* _putchar - puts a character on std output
+* @c: The char variable to be printed
 * Return: 0 Always
 */
 
