@@ -13,7 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *_nn = ht->array[index];
 	hash_node_t *_nw;
 
-    if (*key == '\0')
+    if (*key == '\0' || ht == NULL)
     {
         return (0);
     }
