@@ -21,3 +21,4 @@ int main(void)
     hash_table_print(ht);
     return (EXIT_SUCCESS);
 }
+/*{'Betty': 'Cool', 'python': 'awesome', 'Bob': 'and Kris love asm', '98': 'Battery Street', 'N': 'queens', 'c': 'fun', 'Asterix': 'Obelix'}*/
