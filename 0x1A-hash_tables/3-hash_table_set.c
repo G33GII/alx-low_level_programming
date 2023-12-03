@@ -42,7 +42,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/* Link the new node appropriately in the hash table */
 	_nw->next = _nn;  /* Link new node to the current head at the index */
-	_nn = _nw;  /* Update the head of the linked list at the index */
+	ht->array[index] = _nw;  /* Update the head of the linked list at the index */
 
 	return (1);
 }
