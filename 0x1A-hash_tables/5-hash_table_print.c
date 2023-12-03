@@ -11,6 +11,9 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *_p;
 	char _bff[1024];
 
+	if (ht == NULL)
+		return;
+
 	if (ht->array == NULL)
 	{
 		printf("{}\n");
