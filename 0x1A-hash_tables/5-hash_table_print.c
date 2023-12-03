@@ -35,5 +35,9 @@ void hash_table_print(const hash_table_t *ht)
         }
     }
     strcat(_bff, "\0");
+    _l = strlen(_bff);
+    if (_l >= 2)
+        _bff[_l - 2] = '\0';
+    strcat(_bff, "\0");
     printf("{%s}\n", _bff);
 }
