@@ -55,7 +55,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  * @ht: is the hash table you want to add or update the key/value to
  * @key: is the key. key can not be an empty string
  * @value: value is the value associated with the key.
- * Return: Always EXIT_SUCCESS.
+ * Return: 1 on success and 0 otherwise.
  */
 int replace_iffound(hash_node_t *ht, const char *key, const char *value)
 {
