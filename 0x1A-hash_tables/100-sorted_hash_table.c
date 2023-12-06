@@ -222,5 +222,6 @@ void shash_table_print(const shash_table_t *ht)
  */
 void shash_table_print_rev(const shash_table_t *ht)
 {
+    (void)ht;
 	return;
 }
