@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Project """
 
+
 def island_perimeter(grid):
     """
     Method: returns the perimeter of the island described in grid
